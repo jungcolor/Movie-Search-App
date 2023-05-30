@@ -11,6 +11,7 @@
 -   Bump: [패키지 버전업]
 -   AddFile: [파일추가 : js, ts 등]
 -   AddDocs: [문서추가 : md, txt 등]
+-   ChangeStructure: [구조 변경]
 
 ## 예시
 
