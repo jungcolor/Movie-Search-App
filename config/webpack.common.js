@@ -8,14 +8,14 @@ module.exports = {
         rules: [
             {
                 test: /\.(ts|tsx|js|jsx)$/,
-                exclude: /node_modules/, // 제외할 폴더
-                use: "babel-loader"
+                use: "babel-loader",
+                exclude: /node_modules/ // 제외할 폴더
             },
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'public/index.html'
+            template: './public/index.html'
         }),
         new webpack.ProvidePlugin({
             React: "react"
@@ -23,7 +23,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "../src"),
+            "@": path.resolve(__dirname, "../src/"),
         },
         extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".json"]
     },

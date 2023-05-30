@@ -4,9 +4,8 @@
     "description": "영화 검색 사이트에 여러 기능을 추가 함으로써 React, Redux, Typescript를 학습 하기 위함",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack --mode production",
-        "dev": "webpack serve --open --progress --mode development"
+        "dev": "webpack-dev-server --open --progress --mode development --config config/webpack.config.js",
+        "build": "webpack --mode production --config config/webpack.config.js"
     },
     "repository": {
         "type": "git",
