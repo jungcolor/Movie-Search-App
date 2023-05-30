@@ -4,7 +4,18 @@ const postcssPresetEnv = require('postcss-preset-env'); // css 후처리기 패�
 module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
-    devServer: {},
+    devServer: {
+        open: false,
+        hot: true,
+        compress: true,
+        port: 8081,
+        historyApiFallback: true,
+        liveReload: true
+    },
+    output: {
+        filename: "[name].[contenthash:8].js",
+        publicPath: "/",
+    },
     module: {
         rules: [
             {

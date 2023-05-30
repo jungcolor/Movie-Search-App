@@ -1,13 +1,14 @@
 {
     "presets": [
+        "@babel/preset-react",
         [
             "@babel/preset-env",
             {
+                "modules": false,
                 "useBuiltIns": "usage", // 폴리필 사용 방식 지정
-                "corejs": {
-                    "version": 3 // 폴리필 버전 지정
-                }
+                "corejs": 3 // 폴리필 버전 지정
             }
-        ]
+        ],
+        "@babel/preset-typescript"
     ]
 }
