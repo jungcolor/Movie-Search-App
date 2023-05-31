@@ -9,7 +9,7 @@
 ### Front End
 
 -   React
--   Redux
+-   Redux || recoil ? (상태관리는 추후 선택..)
 -   TypeScript
 -   Tailwind CSS
 -   webpack V5
