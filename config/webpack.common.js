@@ -24,6 +24,7 @@ module.exports = {
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "../src/"),
+            "@layouts": path.resolve(__dirname, "../src/layouts")
         },
         extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".json"]
     },

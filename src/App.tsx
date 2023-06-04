@@ -1,4 +1,4 @@
-import { Header, Main } from './layouts/index';
+import { Header, Main } from '@layouts';
 
 const App = () => {
     return (
