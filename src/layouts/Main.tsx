@@ -10,12 +10,12 @@ const Main = () => {
             <div id="content">
                 {/* 동적으로 변경 될 영역 */}
                 <Routes>
-                    <Route path="/" element={<><h2>전체</h2></>} />
-                    <Route path="/netflix" element={<><h2>넷플릭스</h2></>} />
-                    <Route path="/disneyplus" element={<><h2>디즈니플러스</h2></>} />
-                    <Route path="/coupangplay" element={<><h2>쿠팡플레이</h2></>} />
-                    <Route path="/watcha" element={<><h2>왓챠</h2></>} />
-                    <Route path="/tving" element={<><h2>티빙</h2></>} />
+                    <Route path="/" element={<h2>전체</h2>} />
+                    <Route path="/netflix" element={<h2>넷플릭스</h2>} />
+                    <Route path="/disneyplus" element={<h2>디즈니플러스</h2>} />
+                    <Route path="/coupangplay" element={<h2>쿠팡플레이</h2>} />
+                    <Route path="/watcha" element={<h2>왓챠</h2>} />
+                    <Route path="/tving" element={<h2>티빙</h2>} />
                 </Routes>
             </div>
         </main>

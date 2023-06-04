@@ -1,16 +1,11 @@
-import { BrowserRouter } from 'react-router-dom';
-
-import Header from './layouts/Header'
-import Main from './layouts/Main';
+import { Header, Main } from './layouts/index';
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <div id="app" className="min-h-screen flex flex-col h-screen">
-                <Header />
-                <Main />
-            </div>
-        </BrowserRouter>
+        <div id="app" className="min-h-screen flex flex-col h-screen">
+            <Header />
+            <Main />
+        </div>
     );
 }
 
