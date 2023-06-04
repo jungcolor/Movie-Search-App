@@ -7,6 +7,12 @@
             ],
             "@layouts/*": [
                 "./layouts/*"
+            ],
+            "@components": [
+                "./components/index.ts"
+            ],
+            "@components/*": [
+                "./components/*"
             ]
         }
     }
