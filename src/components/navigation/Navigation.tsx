@@ -10,9 +10,9 @@ const navigations = [
 
 const Navigation = () => {
     return (
-        <nav className="flex">
+        <nav className="flex w-full">
             {navigations?.map(navi => {
-                return <Link key={navi.id} to={navi.link} className="mx-6 text-teal-800 hover:text-teal-800">{navi.title}</Link>;
+                return <Link key={navi.id} to={navi.link} className="flex-1 text-center text-teal-800 hover:text-teal-800 hover:font-semibold">{navi.title}</Link>;
             })}
         </nav>
     )
