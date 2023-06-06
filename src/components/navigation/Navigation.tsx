@@ -1,13 +1,19 @@
 import { Link } from 'react-router-dom';
 
+const navigations = [
+    { id: "navi1", link: "/page2", title: "페이지2" },
+    { id: "navi2", link: "/page3", title: "페이지3" },
+    { id: "navi3", link: "/page4", title: "페이지4" },
+    { id: "navi4", link: "/page5", title: "페이지5" },
+    { id: "navi5", link: "/page6", title: "페이지6" },
+];
+
 const Navigation = () => {
     return (
         <nav className="flex">
-            <Link to="/netflix" className="mx-6 text-teal-800 hover:text-teal-800">넷플릭스</Link>
-            <Link to="/disneyplus" className="mx-6 text-teal-800 hover:text-teal-800">디즈니+</Link>
-            <Link to="/coupangplay" className="mx-6 text-teal-800 hover:text-teal-800">쿠팡플레이</Link>
-            <Link to="/watcha" className="mx-6 text-teal-800 hover:text-teal-800">왓챠</Link>
-            <Link to="/tving" className="mx-6 text-teal-800 hover:text-teal-800">티빙</Link>
+            {navigations?.map(navi => {
+                return <Link key={navi.id} to={navi.link} className="mx-6 text-teal-800 hover:text-teal-800">{navi.title}</Link>;
+            })}
         </nav>
     )
 }
