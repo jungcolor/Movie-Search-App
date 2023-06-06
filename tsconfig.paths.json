@@ -19,6 +19,12 @@
             ],
             "@pages/*": [
                 "./pages/*"
+            ],
+            "@router": [
+                "./router/index.ts"
+            ],
+            "@router/*": [
+                "./router/*"
             ]
         }
     }
