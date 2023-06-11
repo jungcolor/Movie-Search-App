@@ -8,10 +8,8 @@ const Home = () => {
     const [videos, setVideos] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const BASE_URL = `https://api.themoviedb.org/3`;
     const API_KEY = `api_key=b5810e430a249494e0cfef5beddec241`;
-    const API_URL = `${BASE_URL}/movie/now_playing?${API_KEY}&language=ko-KR&page=1`;
-    const BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
+    const API_URL = `https://api.themoviedb.org/3/movie/popular?${API_KEY}&language=ko-KR`;
 
     const fetchDatas = async () => {
         const datas = await axios.get(API_URL).then(response => {
@@ -29,10 +27,13 @@ const Home = () => {
     }, []);
 
     return (
-        loading ? <Spinner /> :
+        loading
+            ?
+            <Spinner />
+            :
             <div className="flex flex-wrap justify-center">
                 {videos?.map((video: ICard) => {
-                    return <Card key={video.id} title={video.title} overview={video.overview} poster_path={BASE_IMG_URL + video.poster_path}></Card>
+                    return <Card key={video.id} title={video.title} overview={video.overview} poster_path={`https://image.tmdb.org/t/p/w500/${video.poster_path}`}></Card>
                 })}
             </div >
     )

@@ -6,7 +6,7 @@ const App = () => {
             <Header />
             <Main />
         </div>
-    );
+    )
 }
 
 export default App;

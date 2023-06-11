@@ -9,7 +9,7 @@ const Header = () => {
             </h1>
             <Navigation></Navigation>
         </header >
-    );
+    )
 }
 
 export default Header;
