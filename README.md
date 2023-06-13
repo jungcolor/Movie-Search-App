@@ -9,9 +9,12 @@
 ### Front End
 
 -   React
--   Redux || recoil ? (상태관리는 추후 선택..)
+-   Redux || Redux Toolkit || recoil ? (상태관리는 추후 선택..)
 -   TypeScript
 -   Tailwind CSS
 -   webpack V5
 
 ### Back End
+
+-   Express
+-   MongoDB
