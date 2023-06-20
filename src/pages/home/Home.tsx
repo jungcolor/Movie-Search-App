@@ -9,7 +9,7 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
 
     const API_KEY = `api_key=b5810e430a249494e0cfef5beddec241`;
-    const API_URL = `https://api.themoviedb.org/3/movie/popular?${API_KEY}&language=ko-KR`;
+    const API_URL = `https://api.themoviedb.org/3/movie/popular?${API_KEY}&language=ko-KR&page=1`;
 
     // 검색정보로 가져오는 API URL
     // https://api.themoviedb.org/3/search/movie?${API_KEY}&language=ko-KR&page=1&query=${searchValue}
