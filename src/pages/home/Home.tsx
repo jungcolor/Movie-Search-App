@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { ICard } from "types";
-import { Card, Spinner } from "@components";
+import { Card, Spinner, Search } from "@components";
 
 const Home = () => {
     const [videos, setVideos] = useState([]);
@@ -13,7 +13,7 @@ const Home = () => {
     const API_URL_SEARCH = `https://api.themoviedb.org/3/search/movie?${API_KEY}&language=ko-KR&page=1&query=태극기`;
 
     const fetchDatas = async () => {
-        const datas = await axios.get(API_URL_SEARCH).then(response => {
+        const datas = await axios.get(API_URL).then(response => {
             if (response.status === 200) {
                 return response.data.results;
             }
@@ -33,15 +33,18 @@ const Home = () => {
     }
 
     return (
-        <div className="flex flex-wrap justify-center">
-            {videos.length > 0 ?
-                videos.map((video: ICard) => {
-                    return <Card key={video.id} title={video.title} overview={video.overview} poster_path={`https://image.tmdb.org/t/p/w500/${video.poster_path}`}></Card>
-                })
-                :
-                <h2>검색결과가 없습니다.</h2> // 컴포넌트로 변경??
-            }
-        </div>
+        <>
+            <Search></Search>
+            <div className="flex flex-wrap justify-center">
+                {videos.length > 0 ?
+                    videos.map((video: ICard) => {
+                        return <Card key={video.id} title={video.title} overview={video.overview} poster_path={`https://image.tmdb.org/t/p/w500/${video.poster_path}`}></Card>
+                    })
+                    :
+                    <h2>검색결과가 없습니다.</h2> // 컴포넌트로 변경??
+                }
+            </div>
+        </>
     )
 }
 
