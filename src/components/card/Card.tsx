@@ -8,11 +8,11 @@ const Card = (props: ICard) => {
             <a href="#" className="flex min-h-max">
                 <img className="rounded-t-lg" src={poster_path} alt={title} style={{ "minHeight": "480px" }} />
             </a>
-            <div className="p-2">
+            <div className="p-3">
                 <a href="#">
-                    <h5 className="mb-2 text-xl font-bold text-teal-600 tracking-tight">{title}</h5>
+                    <h5 className="mb-3 text-xl font-bold text-teal-600 tracking-tight">{title}</h5>
                 </a>
-                <p className="mb-2 font-normal line-clamp-2">{overview !== "" ? overview : "내용없음"}</p>
+                <p className="text-sm mb-3 font-normal line-clamp-2">{overview !== "" ? overview : "내용없음"}</p>
                 <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-teal-500 rounded-lg hover:bg-teal-800 focus:outline-none ">
                     더보기
                     <svg aria-hidden="true" className="w-2 h-2 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
