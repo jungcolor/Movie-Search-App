@@ -10,10 +10,9 @@ const Home = () => {
 
     const API_KEY = `api_key=b5810e430a249494e0cfef5beddec241`;
     const API_URL = `https://api.themoviedb.org/3/movie/popular?${API_KEY}&language=ko-KR&page=1`;
-    const API_URL_SEARCH = `https://api.themoviedb.org/3/search/movie?${API_KEY}&language=ko-KR&page=1&query=태극기`;
 
-    const fetchDatas = async () => {
-        const datas = await axios.get(API_URL).then(response => {
+    const fetchDatas = async (url: string) => {
+        const datas = await axios.get(url).then(response => {
             if (response.status === 200) {
                 return response.data.results;
             }
@@ -23,8 +22,15 @@ const Home = () => {
         setLoading(false);
     };
 
+    const onSearch = (value: string) => {
+        // TODO - 빈공백, 특수문자 등 체크 해야함
+        const API_URL_SEARCH = `https://api.themoviedb.org/3/search/movie?${API_KEY}&language=ko-KR&page=1&query=${value}`;
+
+        fetchDatas(value !== "" ? API_URL_SEARCH : API_URL);
+    };
+
     useEffect(() => {
-        fetchDatas();
+        fetchDatas(API_URL);
     }, []);
 
     // 로딩중..
@@ -34,7 +40,7 @@ const Home = () => {
 
     return (
         <>
-            <Search></Search>
+            <Search searchHandler={onSearch}></Search>
             <div className="flex flex-wrap justify-center">
                 {videos.length > 0 ?
                     videos.map((video: ICard) => {

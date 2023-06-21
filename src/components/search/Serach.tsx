@@ -1,19 +1,29 @@
 import { useState } from "react";
+import { ISearch } from "types";
 
-const Search = () => {
+const Search = (props: ISearch) => {
+    const { searchHandler } = props;
+
     const [value, setValue] = useState("");
+
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { target } = e;
 
         setValue(target.value);
     };
+
     const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log(e);
+        onComplete();
     };
+
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        onComplete();
+    };
 
+    const onComplete = () => {
         setValue("");
+        searchHandler(value);
     };
 
     return (

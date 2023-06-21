@@ -4,3 +4,7 @@ export interface ICard {
     poster_path?: string;
     overview?: string;
 }
+
+export interface ISearch {
+    searchHandler: (value: string) => void;
+}
