@@ -1,13 +1,13 @@
 import { ICard } from 'types';
 
-// TODO - CSS관련 정리 필요
-import './card.scss';
-
 const Card = (props: ICard) => {
-    const { title, poster_path, overview } = props;
+    const { title, poster_path, overview, onClickHandler } = props;
+    const onClick = () => {
+        onClickHandler();
+    };
 
     return (
-        <div className="card m- relative max-w-xs shadow m-3 box-border cursor-pointer bg-white border-2 border-gray-300 hover:border-teal-500">
+        <div className="card m- relative max-w-xs shadow m-3 box-border cursor-pointer bg-white border-2 border-gray-300 hover:border-teal-500" onClick={onClick}>
             <div className="card-thumnail relative flex min-h-max">
                 <img src={poster_path} alt={title} style={{ minHeight: '480px' }} />
             </div>

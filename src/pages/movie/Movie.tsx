@@ -22,6 +22,10 @@ const Movie = () => {
         setLoading(false);
     };
 
+    useEffect(() => {
+        fetchDatas(API_URL);
+    }, []);
+
     const onSearch = (value: string) => {
         // TODO - 빈공백, 특수문자 등 체크 해야함
         const API_URL_SEARCH = `https://api.themoviedb.org/3/search/movie?${API_KEY}&language=ko-KR&page=1&query=${value}`;
@@ -29,9 +33,9 @@ const Movie = () => {
         fetchDatas(value !== '' ? API_URL_SEARCH : API_URL);
     };
 
-    useEffect(() => {
-        fetchDatas(API_URL);
-    }, []);
+    const onClick = () => {
+        console.log('Create Modal');
+    };
 
     // 로딩중..
     if (loading) {
@@ -45,7 +49,7 @@ const Movie = () => {
                 {
                     videos.length > 0 ? (
                         videos.map((video: ICard) => {
-                            return <Card key={video.id} title={video.title} overview={video.overview} poster_path={`https://image.tmdb.org/t/p/w500/${video.poster_path}`}></Card>;
+                            return <Card key={video.id} title={video.title} overview={video.overview} poster_path={`https://image.tmdb.org/t/p/w500/${video.poster_path}`} onClickHandler={onClick}></Card>;
                         })
                     ) : (
                         <h2>검색결과가 없습니다.</h2>

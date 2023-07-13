@@ -3,6 +3,7 @@ export interface ICard {
     title?: string;
     poster_path?: string;
     overview?: string;
+    onClickHandler: () => void;
 }
 
 export interface ISearch {
