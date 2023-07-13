@@ -4,15 +4,19 @@ $teal: rgba(13, 148, 136, 1);
 
 // Modal
 .modal {
-    &::before {
+    &.open::before {
+        content: '';
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 100;
+        z-index: 29;
         background-color: $black;
         opacity: 0.7;
+    }
+    .modal-contents {
+        z-index: 30;
     }
 }
 
