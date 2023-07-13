@@ -1,5 +1,3 @@
-# 잠시 휴식중
-
 # Movie-Search-App
 
 ## 개요
