@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { ICard } from 'types';
-import { Card, Spinner, Search } from '@components';
+import { Card, Spinner, Search, Modal } from '@components';
 
 const Movie = () => {
     const [videos, setVideos] = useState([]);
@@ -37,25 +37,26 @@ const Movie = () => {
         console.log('Create Modal');
     };
 
-    // 로딩중..
-    if (loading) {
-        return <Spinner />;
-    }
-
     return (
         <>
-            <Search searchHandler={onSearch}></Search>
-            <div className="flex flex-wrap justify-center">
-                {
-                    videos.length > 0 ? (
-                        videos.map((video: ICard) => {
-                            return <Card key={video.id} title={video.title} overview={video.overview} poster_path={`https://image.tmdb.org/t/p/w500/${video.poster_path}`} onClickHandler={onClick}></Card>;
-                        })
-                    ) : (
-                        <h2>검색결과가 없습니다.</h2>
-                    ) // 컴포넌트로 변경??
-                }
-            </div>
+            {loading ? (
+                <Spinner /> // 로딩중..
+            ) : (
+                <>
+                    <Search searchHandler={onSearch}></Search>
+                    <div className="flex flex-wrap justify-center">
+                        {
+                            videos.length > 0 ? (
+                                videos.map((video: ICard) => {
+                                    return <Card key={video.id} title={video.title} overview={video.overview} poster_path={`https://image.tmdb.org/t/p/w500/${video.poster_path}`} onClickHandler={onClick}></Card>;
+                                })
+                            ) : (
+                                <h2>검색결과가 없습니다.</h2>
+                            ) // 컴포넌트로 변경??
+                        }
+                    </div>
+                </>
+            )}
         </>
     );
 };
