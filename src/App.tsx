@@ -1,10 +1,10 @@
-import { Header, Main } from '@layouts';
+import { HeaderContainer, MainContainer } from '@layouts';
 
 const App = () => {
     return (
         <div id="app" className="min-h-screen flex flex-col h-screen">
-            <Header />
-            <Main />
+            <HeaderContainer />
+            <MainContainer />
         </div>
     );
 };
